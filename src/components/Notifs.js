@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import TransitionGroup from 'react-addons-css-transition-group';
 
 // These can be overridden by changing the componentClassName prop
-import '../../css/styles.css';
 
 const getter = (obj, propName) => (obj.get ? obj.get(propName) : obj[propName]);
 
