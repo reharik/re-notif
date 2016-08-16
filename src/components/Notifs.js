@@ -28,8 +28,15 @@ function Notifs(props) {
     className || null
   ].join(' ').split();
 
-  return (<div className={classes} >
+  return (
+    <div className={classes} >
+      <TransitionGroup
+        transitionName={`${componentClassName}-transition`}
+        transitionEnterTimeout={transitionEnterTimeout}
+        transitionLeaveTimeout={transitionLeaveTimeout}
+      >
         {items}
+      </TransitionGroup>
     </div>
   );
 }
