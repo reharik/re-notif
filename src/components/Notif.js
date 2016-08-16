@@ -3,6 +3,7 @@ import React from 'react';
 class Notif extends React.Component {
   constructor() {
     super();
+    this._id = new Date().getTime();
     this._onActionClick = this._onActionClick.bind(this);
   }
 

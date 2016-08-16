@@ -11,7 +11,7 @@ import Notif from './Notif';
 function Notifs(props) {
   const { notifs, className, componentClassName, CustomComponent, transitionEnterTimeout, transitionLeaveTimeout, onActionClick, actionLabel } = props;
 
-  const items = notifs.map((notif) => (
+  const items = notifs && notifs.length > 0 ? notifs.map((notif) => (
     <Notif
       key={getter(notif, 'id')}
       id={getter(notif, 'id')}
@@ -22,7 +22,7 @@ function Notifs(props) {
       onActionClick={onActionClick}
       actionLabel={actionLabel}
     />
-  ));
+  )) : null;
   const classes = [
     `${componentClassName}__container`,
     className || null
