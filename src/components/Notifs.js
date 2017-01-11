@@ -61,4 +61,13 @@ Notifs.propTypes = {
   actionLabel: React.PropTypes.string
 };
 
-export default connect((state) => ({ notifs: state.get ? state.get('notifs') : state.notifs }), {})(Notifs);
+var mapStateToProps = (state, ownProps) => {
+  const notifs = state.get
+    ? state.get('notifs').filter(x=>x.containerName === ownProps.containerName) 
+    : state.notifs.filter(x=>x.containerName === ownProps.containerName);
+  return {
+    notifs
+  }
+};
+
+export default connect(mapStateToProps, {})(Notifs);
