@@ -1,17 +1,15 @@
 import React from 'react';
 
 class Notif extends React.Component {
-  constructor() {
-    super();
+  componentWillMount() {
     this._id = new Date().getTime();
-    this._onActionClick = this._onActionClick.bind(this);
   }
 
   /*
    * Handle action click event
    * @description Handle click events on the
    */
-  _onActionClick(event) {
+  _onActionClick = (event) => {
     event.preventDefault();
     if (this.props.onActionClick) {
       this.props.onActionClick(this.props.id);
