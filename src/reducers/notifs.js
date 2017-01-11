@@ -15,7 +15,7 @@ export default function notifs(domain = [], action) {
       );
     case NOTIF_CLEAR:
       return domain.filter(notif =>
-        !!notif.containerName && notif.containerName !== action.containerName
+        !!notif.containerName && notif.containerName !== action.payload
       );
     default:
       return domain;
