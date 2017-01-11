@@ -30,6 +30,6 @@ export function notifDismiss(id) {
 /**
  * Clear all notifications
  */
-export function notifClear() {
-  return { type: NOTIF_CLEAR };
+export function notifClear(containerName) {
+  return { type: NOTIF_CLEAR, payload: containerName };
 }
