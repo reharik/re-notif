@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Notif extends React.Component {
   componentWillMount() {
@@ -9,7 +10,7 @@ class Notif extends React.Component {
    * Handle action click event
    * @description Handle click events on the
    */
-  _onActionClick = (event) => {
+  _onActionClick(event) {
     event.preventDefault();
     if (this.props.onActionClick) {
       this.props.onActionClick(this.props.id);
@@ -45,16 +46,16 @@ Notif.defaultProps = {
 };
 
 Notif.propTypes = {
-  id: React.PropTypes.oneOfType([React.PropTypes.string, React.PropTypes.number]).isRequired,
-  message: React.PropTypes.string.isRequired,
-  kind: React.PropTypes.oneOf(['success', 'info', 'warning', 'danger']).isRequired,
-  componentClassName: React.PropTypes.string,
-  onActionClick: React.PropTypes.func,
-  actionLabel: React.PropTypes.string,
-  CustomComponent: React.PropTypes.oneOfType([
-    React.PropTypes.func,
-    React.PropTypes.node,
-    React.PropTypes.element
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  message: PropTypes.string.isRequired,
+  kind: PropTypes.oneOf(['success', 'info', 'warning', 'danger']).isRequired,
+  componentClassName: PropTypes.string,
+  onActionClick: PropTypes.func,
+  actionLabel: PropTypes.string,
+  CustomComponent: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.node,
+    PropTypes.element
   ]),
 };
 

@@ -21,12 +21,13 @@
   },
   "homepage": "http://indexiatech.github.io/re-notif",
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react-addons-css-transition-group": "^15.0.2"
   },
   "peerDependencies": {
     "redux": "2.0.0 || ^3.0.0",
     "react-redux": "^3.1.0 || ^4.0.0",
-    "react": "^0.14.0 || ^15.0.0"
+    "react": "^16.0.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
@@ -42,8 +43,8 @@
     "eslint-plugin-react": "^5.2.0",
     "express": "^4.14.0",
     "file-loader": "^0.9.0",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
     "react-redux": "^4.0.0",
     "react-router": "^1.0.0-rc3",
     "react-transform-hmr": "^1.0.1",
@@ -58,4 +59,3 @@
     "webpack-hot-middleware": "^2.10.0"
   }
 }
- 

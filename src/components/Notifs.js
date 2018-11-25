@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TransitionGroup from 'react-addons-css-transition-group';
 
@@ -51,23 +52,23 @@ Notifs.defaultProps = {
 };
 
 Notifs.propTypes = {
-  notifs: React.PropTypes.array,
-  className: React.PropTypes.string,
-  CustomComponent: React.PropTypes.func,
-  componentClassName: React.PropTypes.string,
-  transitionEnterTimeout: React.PropTypes.number,
-  transitionLeaveTimeout: React.PropTypes.number,
-  onActionClick: React.PropTypes.func,
-  actionLabel: React.PropTypes.string
+  notifs: PropTypes.array,
+  className: PropTypes.string,
+  CustomComponent: PropTypes.func,
+  componentClassName: PropTypes.string,
+  transitionEnterTimeout: PropTypes.number,
+  transitionLeaveTimeout: PropTypes.number,
+  onActionClick: PropTypes.func,
+  actionLabel: PropTypes.string
 };
 
-var mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
   const notifs = state.get
-    ? state.get('notifs').filter(x=>x.containerName === ownProps.containerName) 
-    : state.notifs.filter(x=>x.containerName === ownProps.containerName);
+    ? state.get('notifs').filter(x => x.containerName === ownProps.containerName)
+    : state.notifs.filter(x => x.containerName === ownProps.containerName);
   return {
     notifs
-  }
+  };
 };
 
 export default connect(mapStateToProps, {})(Notifs);
